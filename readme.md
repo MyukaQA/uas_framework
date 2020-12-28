@@ -8,18 +8,14 @@
   <li class="list-group-item">zoom cover buku</li>
 
 ## How to install and demonstration ?
-After clone or download this repository, next step is install all dependency required by laravel and laravel-mix.
+Setelah selesai clone repository ini, install depedensi di bawah ini ya.
 
 ```shell
 # install composer-dependency
 $ composer install
-# install npm package
-$ npm install
-# build dev 
-$ npm run dev
 ```
 
-Before we start web server make sure we already generate app key, configure `.env` file and do migration.
+sebelum run project silahkan konfigurasi env nya dan generate Keynya , habis itu run project, seperti dibawah ini.
 
 ```shell
 # create copy of .env
