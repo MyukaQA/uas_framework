@@ -140,6 +140,11 @@ hr.dashed {
                     <small id="emailHelp" class="form-text text-muted">Pilih rak buku</small>
                   </div>
                 </div>
+                <div class="form-group">
+                  <label>Tentang Buku</label>
+                  <textarea name="detail" class="form-control" cols="30" rows="5"></textarea>
+                  <small id="emailHelp" class="form-text text-muted">Jelaskan tentang buku ini</small>
+                </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
               </form>
             </div>
@@ -358,15 +363,15 @@ hr.dashed {
   </div>    
   
   @else
-  <section class="d-flex py-5" id="cari-buku">
+
     <div class="row">
-      <div class="col-lg-3 mx-auto">
+      <div class="col-lg-3 mx-auto w-100">
         <h3 class="font-weight-bold" >Cari Buku</h3>
         <p>Anda bisa mencari buku yang tersedia</p>
         <a href="{{route('dashboard-index')}}" class="btn mt-3 w-100 text-bold custom-button-buku-all">Tampilkan Semua</a>
       </div>
   
-      <div class="col-lg-8 mx-auto">
+      <div class="col-lg-9 mx-auto w-100">
         <form action="{{route('dashboard-index')}}" method="GET">
           <div class="input-group mb-5 border rounded-pill p-1 shadow-sm">
             <input name="cari" type="search" placeholder="Buku apa yang dicari ?" class="form-control bg-none border-0">
@@ -387,7 +392,7 @@ hr.dashed {
                 <p class="text-bold font-italic text-list-buku-custom-position">Penulis : {{$buku->penulis}}</p>
                 <p class="text-bold font-italic text-list-buku-custom-position">Penerbit : {{$buku->penerbit}}</p>
                 <p class="font-weight-bold text-list-buku-custom-position">Tentang Buku :</p>
-                <p class="text-bold text-list-buku-custom-position"> ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum</p>
+                <p class="text-bold text-list-buku-custom-position">{{Str::limit($buku->detail, 100, '..')}}</p>
               </div>
             </div>
           </div>
@@ -397,7 +402,7 @@ hr.dashed {
   
       </div>
     </div>
-  </section>
+
   @endif
   
 </div>

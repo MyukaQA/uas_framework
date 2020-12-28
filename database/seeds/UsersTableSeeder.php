@@ -66,7 +66,8 @@ class UsersTableSeeder extends Seeder
             'rak_buku_id' => 1,
             'cover_buku' => 'default.png',
             'penulis' => 'Mihoyo',
-            'Penerbit' => 'Mihoyo Andorid'
+            'Penerbit' => 'Mihoyo Andorid',
+            'detail' => 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum'
         ]);
 
         \App\Buku::create([
@@ -75,7 +76,8 @@ class UsersTableSeeder extends Seeder
             'rak_buku_id' => 1,
             'cover_buku' => 'default.png',
             'penulis' => 'Sarah',
-            'Penerbit' => 'Sarah Corp.'
+            'Penerbit' => 'Sarah Corp.',
+            'detail' => 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum'
         ]);
 
         \App\Buku::create([
@@ -84,7 +86,8 @@ class UsersTableSeeder extends Seeder
             'rak_buku_id' => 2,
             'cover_buku' => 'default.png',
             'penulis' => 'Linda',
-            'Penerbit' => 'Linda Community.'
+            'Penerbit' => 'Linda Community.',
+            'detail' => 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum'
         ]);
     }
 }

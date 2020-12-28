@@ -45,17 +45,20 @@ class BukuController extends Controller
             'judul' => 'required|min:3',
             'penulis' => 'required|min:3',
             'penerbit' => 'required|min:3',
+            'text' => 'required|min:3',
         ]);
     
         if ($validator->fails()) {
             return back()->with('toast_error', $validator->messages()->all()[0])->withInput();
         }
+        
         $buku = new Buku;
         $buku->judul = $request->judul;
         $buku->kategori_id = $request->kategori;
         $buku->rak_buku_id = $request->rak_buku;
         $buku->penulis = $request->penulis;
         $buku->penerbit = $request->penerbit;
+        $buku->detail = $request->detail;
 
         if($request->hasFile('cover_buku')){
             $request->file('cover_buku')->move('img/cover/', $request->file('cover_buku')->getClientOriginalName());
@@ -125,6 +128,7 @@ class BukuController extends Controller
         $buku->penerbit = $request->penerbit;
         $buku->kategori_id = $request->kategori;
         $buku->rak_buku_id = $request->rak_buku;
+        $buku->detail = $request->detail;
 
         if($request->hasFile('cover_buku')){
             $request->file('cover_buku')->move('img/cover/', $request->file('cover_buku')->getClientOriginalName());

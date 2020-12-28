@@ -44,10 +44,8 @@
       </div>
       @else
       <div class="col-lg-3 mx-auto">
-
-          <input type="text" name="buku_id" class="d-none" value="{{$buku->id}}">
-          <a href="{{route('favorit-delete', $favorit->id)}}" class="btn btn-outline-danger w-100 h-100"><i class="fa fa-trash" aria-hidden="true"></i> Hapus</a>
-
+        <input type="text" name="buku_id" class="d-none" value="{{$buku->id}}">
+        <a href="{{route('favorit-delete', $favorit->id)}}" class="btn btn-outline-danger w-100 h-100"><i class="fa fa-trash" aria-hidden="true"></i> Hapus</a>
       </div>
       @endif
       <div class="col-lg-3 mx-auto">
@@ -103,6 +101,7 @@
           {{-- tentang buku --}}
           <div class="p-3 rounded shadow" style="background-color: #a7c5eb">
             <p class="h5 font-weight-bold">Tentang Buku :</p>
+            <p class="h6 text-bold">{{$buku->detail}}</p>
           </div>
 
         </div>
@@ -129,7 +128,7 @@
       <div class="row py-4">
         <div class="col-md-12 col-lg-12">
           @foreach ($ulasan->where('buku_id', $buku->id) as $item)
-            <div class="card">
+            <div class="card mb-5">
               <div class="card-header">
                 {{$item->user->name}}
               </div>

@@ -21,6 +21,7 @@ class CreateBukuTable extends Migration
             $table->string('cover_buku')->nullable()->default('default.png');
             $table->string('penulis');
             $table->string('penerbit');
+            $table->text('detail');
             $table->timestamps();
         });
     }

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Ulasan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
+use Validator;
 class UlasanController extends Controller
 {
     /**
@@ -36,6 +36,14 @@ class UlasanController extends Controller
      */
     public function store(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'ulasan' => 'required|min:3'
+        ]);
+    
+        if ($validator->fails()) {
+            return back()->with('toast_error', $validator->messages()->all()[0])->withInput();
+        }
+
         $ulasan = new Ulasan;
         $ulasan->user_id = Auth::user()->id;
         $ulasan->buku_id = $request->buku_id;
