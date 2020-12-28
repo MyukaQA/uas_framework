@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Buku;
+use App\FavoritBuku;
 use App\Ulasan;
 use Illuminate\Http\Request;
 use File;
+use Illuminate\Support\Facades\Auth;
 use Validator;
 
 
@@ -76,8 +78,9 @@ class BukuController extends Controller
     {
         $buku = Buku::find($id);
         $ulasan = Ulasan::all();
+        $favorit = FavoritBuku::where('user_id', Auth::user()->id)->get();
 
-        return view('dashboard.detail', compact('buku', 'ulasan'));
+        return view('dashboard.detail', compact('buku', 'ulasan', 'favorit'));
     }
 
     /**

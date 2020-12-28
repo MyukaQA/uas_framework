@@ -38,5 +38,9 @@ Route::group(['middleware' => ['auth','checkRole:admin,user']], function () {
 
     // Ulasan
     Route::post('/ulasan', 'UlasanController@store')->name('ulasan-create');
+
+    // favorite Buku
+    Route::post('/favorit', 'FavoritBukuController@store')->name('favorit-create');
+
 });
 

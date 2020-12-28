@@ -28,4 +28,8 @@ class Buku extends Model
     public function ulasan(){
         return $this->hasMany(Ulasan::class);
     }
+
+    public function favorit(){
+        return $this->hasMany(FavoritBuku::class);
+    }
 }

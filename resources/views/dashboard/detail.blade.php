@@ -34,9 +34,23 @@
       <div class="col-lg-3 mx-auto">
         <a href="" class="btn btn-outline-secondary w-100 h-100"><i class="fa fa-sticky-note" aria-hidden="true"></i> Ulasan</a>
       </div>
+      @if (!empty($favorit))
       <div class="col-lg-3 mx-auto">
-        <a href="{{route('dashboard-index')}}" class="btn btn-outline-danger w-100 h-100"><i class="fa fa-heart-o" aria-hidden="true"></i> Sukai</a>
+        <form action="" >
+        {{ csrf_field() }}
+          <input type="text" name="buku_id" class="d-none" value="{{$buku->id}}">
+          <button type="submit" class="btn btn-outline-danger w-100 h-100"><i class="fa fa-trash" aria-hidden="true"></i> Hapus</button>
+        </form>
       </div>
+      @elseif (empty($favorit))
+      <div class="col-lg-3 mx-auto">
+        <form action="{{route('favorit-create')}}" method="POST">
+        {{ csrf_field() }}
+          <input type="text" name="buku_id" class="d-none" value="{{$buku->id}}">
+          <button type="submit" class="btn btn-outline-danger w-100 h-100"><i class="fa fa-heart-o" aria-hidden="true"></i> Sukai</button>
+        </form>
+      </div>
+      @endif
       <div class="col-lg-3 mx-auto">
         <a href="{{route('dashboard-index')}}" class="btn btn-outline-secondary w-100 h-100"><i class="fa fa-arrow-left" aria-hidden="true"></i> Kembali</a>
       </div>

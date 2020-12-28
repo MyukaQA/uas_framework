@@ -19,7 +19,9 @@ hr.dashed {
 }
 
 .custom-button-buku-all{
-  background-color: #a7c5eb;
+  border-color: #a7c5eb;
+  /* background-color: #a7c5eb; */
+  color: #a7c5eb;
   font-weight: bold;
 }
 .custom-button-buku-all:hover{
