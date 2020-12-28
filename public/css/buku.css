@@ -1,0 +1,23 @@
+.border-custom-list-buku{
+  border-radius: 5px 70px 5px 150px; 
+}
+
+.custom-position{
+  /* transform: translateX(3rem); */
+  border-radius: 10px 150px 10px 150px;
+}
+
+@media (max-width: 576px) {
+  .border-custom-list-buku{
+    border-radius: 5px 150px 5px 20px; 
+  }
+
+  .img-cover-buku-custom-position{
+    text-align: center;
+  }
+
+  .text-list-buku-custom-position{
+    margin-left: 15px;
+    margin-top: 40px;
+  }
+}
