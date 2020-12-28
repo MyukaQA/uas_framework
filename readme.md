@@ -7,7 +7,7 @@
   <li class="list-group-item">belum ada batasan required (di beberapa crud)</li>
   <li class="list-group-item">zoom cover buku</li>
 
-## How to install and demonstration ?
+## Cara jalankan project ?
 Setelah selesai clone repository ini, install depedensi di bawah ini ya.
 
 ```shell
