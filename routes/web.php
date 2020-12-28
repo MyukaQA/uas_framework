@@ -40,7 +40,9 @@ Route::group(['middleware' => ['auth','checkRole:admin,user']], function () {
     Route::post('/ulasan', 'UlasanController@store')->name('ulasan-create');
 
     // favorite Buku
+    Route::get('/dashboard/favorit/buku', 'FavoritBukuController@index')->name('favorit-index');
     Route::post('/favorit', 'FavoritBukuController@store')->name('favorit-create');
+    Route::get('/favorit/hapus/{id}', 'FavoritBukuController@destroy')->name('favorit-delete');
 
 });
 

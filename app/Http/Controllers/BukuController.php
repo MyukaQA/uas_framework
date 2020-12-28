@@ -78,7 +78,12 @@ class BukuController extends Controller
     {
         $buku = Buku::find($id);
         $ulasan = Ulasan::all();
-        $favorit = FavoritBuku::where('user_id', Auth::user()->id)->get();
+        $favorit = FavoritBuku::where([
+            ['user_id',Auth::user()->id],
+            ['buku_id',$buku->id]
+        ])->first();
+
+        // dd($favorit);
 
         return view('dashboard.detail', compact('buku', 'ulasan', 'favorit'));
     }

@@ -15,7 +15,13 @@ class FavoritBukuController extends Controller
      */
     public function index()
     {
-        //
+        $suka = FavoritBuku::where([
+            ['user_id', Auth::user()->id]
+        ])->get();
+
+        // dd($suka);
+
+        return view('dashboard.favorit', compact('suka'));
     }
 
     /**
@@ -88,6 +94,10 @@ class FavoritBukuController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $suka = FavoritBuku::find($id);
+        $suka->delete($suka);
+
+        toast('buku ini dihapus dari favorit', 'success')->autoClose(3000);
+        return redirect()->back();
     }
 }

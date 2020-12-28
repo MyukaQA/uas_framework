@@ -45,7 +45,8 @@
                     <li class="nav-item"><a class="nav-link" href="#kategori">Kategori</a></li>
                     <li class="nav-item"><a class="nav-link" href="#rak_buku">Rak Buku</a></li>                
                   @else
-                    <li class="nav-item"><a class="nav-link" href="#cari-buku">Cari Buku</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{route('dashboard-index')}}">Cari Buku</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{route('favorit-index')}}">Buku Favorit Saya</a></li>
                   @endif
                   @guest
                     <li class="nav-item"><a class="nav-link" href="{{route('login')}}">Masuk</a></li>

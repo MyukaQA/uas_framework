@@ -32,8 +32,32 @@ class UsersTableSeeder extends Seeder
             'kategori' => 'Fantasy'
         ]);
 
+        \App\Kategori::create([
+            'kategori' => 'Romance'
+        ]);
+
+        \App\Kategori::create([
+            'kategori' => 'Comedy'
+        ]);
+
         \App\RakBuku::create([
             'rak_buku' => 'A001'
+        ]);
+
+        \App\RakBuku::create([
+            'rak_buku' => 'A002'
+        ]);
+
+        \App\RakBuku::create([
+            'rak_buku' => 'A003'
+        ]);
+
+        \App\RakBuku::create([
+            'rak_buku' => 'A004'
+        ]);
+
+        \App\RakBuku::create([
+            'rak_buku' => 'A005'
         ]);
 
         \App\Buku::create([
@@ -43,6 +67,24 @@ class UsersTableSeeder extends Seeder
             'cover_buku' => 'default.png',
             'penulis' => 'Mihoyo',
             'Penerbit' => 'Mihoyo Andorid'
+        ]);
+
+        \App\Buku::create([
+            'judul' => 'Buku Cinta',
+            'kategori_id' => 2,
+            'rak_buku_id' => 1,
+            'cover_buku' => 'default.png',
+            'penulis' => 'Sarah',
+            'Penerbit' => 'Sarah Corp.'
+        ]);
+
+        \App\Buku::create([
+            'judul' => 'Pedihnya Dunia',
+            'kategori_id' => 3,
+            'rak_buku_id' => 2,
+            'cover_buku' => 'default.png',
+            'penulis' => 'Linda',
+            'Penerbit' => 'Linda Community.'
         ]);
     }
 }

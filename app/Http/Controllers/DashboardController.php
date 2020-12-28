@@ -17,7 +17,7 @@ class DashboardController extends Controller
     public function index(Request $request)
     {
         if ($request->has('cari')){
-            $bukus = Buku::where('judul', 'LIKE', '%'.$request->cari.'%')->orderBy('id', 'DESC')->get();
+            $bukus = Buku::where('judul', 'LIKE', '%'.$request->cari.'%')->orderBy('id', 'DESC')->paginate(10);
             $kategoris = Kategori::all();
             $rakBukus = RakBuku::all();            
         }else{
