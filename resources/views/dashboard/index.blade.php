@@ -17,6 +17,16 @@
 hr.dashed {
     border-top: 2px dashed #999;
 }
+
+.custom-button-buku-all{
+  background-color: #a7c5eb;
+  font-weight: bold;
+}
+.custom-button-buku-all:hover{
+  background-color: #a7c5eb;
+  font-weight: bold;
+  color: white;
+}
 </style>
 
 <div class="container">
@@ -138,12 +148,6 @@ hr.dashed {
 
     </div>
     <div class="col-lg-8 mx-auto">
-      <div class="input-group mb-4 border rounded-pill p-1">
-        <input type="search" placeholder="Buku apa yang dicari ?" class="form-control bg-none border-0">
-        <div class="input-group-append border-0">
-          <button id="button-addon3" type="button" class="btn btn-link text-info"><i class="fa fa-search"></i></button>
-        </div>
-      </div>
 
       <div class="table-responsive">
         <table class="table table-hover">
@@ -330,13 +334,13 @@ hr.dashed {
                 </td>
               </tr>
 
-              <!-- Modal Hapus kategori -->
+              <!-- Modal Hapus Rak Buku -->
               <div class="modal fade" id="hapus-rak{{$rakBuku->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-body">
                       <div class="alert alert-warning" role="alert">
-                        Tekan <b>Hapus</b> jika sudah yakins
+                        Tekan <b>Hapus</b> jika sudah yakin
                       </div>
                       <a href="{{route('rakbuku-hapus', $rakBuku->id)}}" class="btn btn-danger">Hapus</a>
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
@@ -357,15 +361,18 @@ hr.dashed {
       <div class="col-lg-3 mx-auto">
         <h3 class="font-weight-bold" >Cari Buku</h3>
         <p>Anda bisa mencari buku yang tersedia</p>
+        <a href="{{route('dashboard-index')}}" class="btn mt-3 w-100 text-bold custom-button-buku-all">Tampilkan Semua</a>
       </div>
   
       <div class="col-lg-8 mx-auto">
-        <div class="input-group mb-5 border rounded-pill p-1 shadow-sm">
-          <input type="search" placeholder="Buku apa yang dicari ?" class="form-control bg-none border-0">
-          <div class="input-group-append border-0">
-            <button id="button-addon3" type="button" class="btn btn-link text-info"><i class="fa fa-search"></i></button>
+        <form action="{{route('dashboard-index')}}" method="GET">
+          <div class="input-group mb-5 border rounded-pill p-1 shadow-sm">
+            <input name="cari" type="search" placeholder="Buku apa yang dicari ?" class="form-control bg-none border-0">
+            <div class="input-group-append border-0">
+              <button id="button-addon3" type="button" class="btn btn-link text-info"><i class="fa fa-search"></i></button>
+            </div>
           </div>
-        </div>
+        </form>
   
         @foreach ($bukus as $buku)
           <div class="shadow border-custom-list-buku mb-5" style="background-color: #a7c5eb">
@@ -383,6 +390,8 @@ hr.dashed {
             </div>
           </div>
         @endforeach
+
+        {{$bukus->links()}}
   
       </div>
     </div>

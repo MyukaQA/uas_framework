@@ -97,7 +97,7 @@
 
       <div class="row py-4">
         <div class="col-md-12 col-lg-12">
-          <div class="p-3 rounded shadow mb-5" style="background-color: #00303f">
+          <div class="p-3 rounded shadow mb-5" style="background-color: #a7c5eb">
             <p class="h5 font-weight-bold text-white">Beri Ulasan : </p>
             <form action="{{route('ulasan-create')}}" method="POST">
               {{ csrf_field() }}

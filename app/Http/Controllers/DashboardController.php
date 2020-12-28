@@ -14,11 +14,17 @@ class DashboardController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $bukus = Buku::orderBy('id', 'DESC')->get();
-        $kategoris = Kategori::all();
-        $rakBukus = RakBuku::all();
+        if ($request->has('cari')){
+            $bukus = Buku::where('judul', 'LIKE', '%'.$request->cari.'%')->orderBy('id', 'DESC')->get();
+            $kategoris = Kategori::all();
+            $rakBukus = RakBuku::all();            
+        }else{
+            $bukus = Buku::orderBy('id', 'DESC')->paginate(10);
+            $kategoris = Kategori::all();
+            $rakBukus = RakBuku::all();
+        }
         return view('dashboard.index', compact('bukus', 'kategoris', 'rakBukus'));
     }
 

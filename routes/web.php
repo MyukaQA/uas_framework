@@ -20,7 +20,7 @@ Route::group(['middleware' => ['auth','checkRole:admin,user']], function () {
     Route::get('/dashboard/edit/buku/{id}', 'BukuController@edit')->name('buku-edit');
     Route::post('/dashboard/update/buku/{id}', 'BukuController@update')->name('buku-update');
     Route::get('/dashboard/hapus/buku/{id}', 'BukuController@destroy')->name('buku-hapus');
-
+ 
     // detail buku
     Route::get('/dashboard/detail/{id}', 'BukuController@show')->name('buku-show');
 
