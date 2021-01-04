@@ -15,7 +15,7 @@ class UsersTableSeeder extends Seeder
         \App\User::create([
             'role' => 'admin',
             'name' => 'Admin Framework',
-            'email' => 'admin@admin.com',
+            'email' => 'admin@gmail.com',
             'password' => Hash::make('admin'),
             'remember_token' => Str::random(60)
         ]);
