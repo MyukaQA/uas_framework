@@ -1,10 +1,5 @@
 # UAS FRAMEWROK
 
-<p>kurang lebih udah 90% kayak e</p>
-
-## Minus
-  <li class="list-group-item">zoom cover buku</li>
-
 ## Cara jalankan project ?
 Setelah selesai clone repository ini, install depedensi di bawah ini ya.
 
