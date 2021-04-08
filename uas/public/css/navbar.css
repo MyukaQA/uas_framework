@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+html{
+  scroll-behavior: smooth;
+}
+/* Rounded tabs */
+.font-custom-header{
+  font-family: 'Fredoka One', cursive;
+}
+
+@media (min-width: 576px) {
+  .rounded-nav {
+    border-radius: 50rem !important;
+  }
+}
+
+@media (min-width: 576px) {
+  .rounded-nav .nav-link {
+    border-radius: 50rem !important;
+  }
+}
+
+/* With arrow tabs */
+
+.with-arrow .nav-link.active {
+  position: relative;
+  
+}
+
+.with-arrow .nav-link.active::after {
+  content: '';
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #a7c5eb;
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+}
+
+/* lined tabs */
+
+.lined .nav-link {
+  border: none;
+  color: #a7c5eb;
+  border-bottom: 3px solid transparent;
+}
+
+.lined .nav-link:hover {
+  border: none;
+  border-bottom: 3px solid transparent;
+}
+
+.lined .nav-link.active {
+  background: none;
+  color: #555;
+  border-color: #a7c5eb;
+}
+
+/* image grey */
+.img-grey-custom{
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}

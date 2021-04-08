@@ -103,7 +103,7 @@
   <div class="row">
     <div class="col-lg-3 mx-auto">
       <figure class="rounded p-3 shadow text-center h-100" style="background-color: #a7c5eb">
-
+        <img src="{{asset('img/linda.jpg')}}" alt="" class="w-50 card-img-top">
         <figcaption class="p-4 card-img-bottom">
           <h2 class="h5 font-weight-bold mb-2 text-center">LINDA FITRI DWI WULYANTI</h2>
           <p class="mb-0 text-small text-muted font-italic">182410102040</p>
@@ -113,7 +113,7 @@
 
     <div class="col-lg-3 mx-auto">
       <figure class="rounded p-3 shadow text-center h-100" style="background-color: #a7c5eb">
-
+        <img src="{{asset('img/mylian.jpg')}}" alt="" class="w-50 card-img-top">
         <figcaption class="p-4 card-img-bottom">
           <h2 class="h5 font-weight-bold mb-2 text-center">MYLIAN GEDHE</h2>
           <p class="mb-0 text-small text-muted font-italic">182410102048</p>
@@ -123,7 +123,7 @@
 
     <div class="col-lg-3 mx-auto">
       <figure class="rounded p-3 shadow text-center h-100" style="background-color: #a7c5eb">
-
+        <img src="{{asset('img/sarah.jpg')}}" alt="" class="w-50 card-img-top">
         <figcaption class="p-4 card-img-bottom">
           <h2 class="h5 font-weight-bold mb-2 text-center">ANNISA RAHMAWATI</h2>
           <p class="mb-0 text-small text-muted font-italic">182410102050</p>
