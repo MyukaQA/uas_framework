@@ -45,7 +45,6 @@ class BukuController extends Controller
             'judul' => 'required|min:3',
             'penulis' => 'required|min:3',
             'penerbit' => 'required|min:3',
-            'text' => 'required|min:3',
         ]);
     
         if ($validator->fails()) {
