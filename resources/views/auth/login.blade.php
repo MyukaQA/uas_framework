@@ -4,6 +4,31 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+            <div class="alert alert-primary" role="alert">
+                <h4><b>Info Akun</b></h4>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>Admin</h5>
+                        <span>
+                            <p>Email : admin@admin.com</p>
+                            <p>Pass : admin</p>
+                        </span>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>User (akun user bisa buat diregister)</h5>
+                        <span>
+                            <p>Email : mylian@gmail.com</p>
+                            <p>Pass : 182410102048</p>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
 
