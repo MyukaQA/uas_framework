@@ -1,0 +1,4 @@
+{
+  "appService.defaultWebAppToDeploy": "/subscriptions/9f97483a-07b4-462b-a350-21c0d99e721a/resourceGroups/cloud-shell-storage-southeastasia/providers/Microsoft.Web/sites/bukufr",
+  "appService.deploySubpath": "."
+}
