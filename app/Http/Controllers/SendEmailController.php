@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Mail\SendEmail;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 
 class SendEmailController extends Controller
@@ -15,7 +17,13 @@ class SendEmailController extends Controller
      */
     public function index()
     {
-        Mail::to("mozarone1@gmail.com")->send(new SendEmail());
+        $email = User::pluck('email');
+        // dd($email);
+        Mail::to($email)->send(new SendEmail());
+        // foreach ($email as $m) {
+        //     // $mailspec = $m->email;
+        //     dd($m->email);
+        // }
  
 		return "Email telah dikirim";
     }

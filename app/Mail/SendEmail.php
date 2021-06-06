@@ -32,8 +32,8 @@ class SendEmail extends Mailable
         ->view('email.email')
         ->with(
          [
-             'nama' => 'Diki Alfarabi Hadi',
-             'website' => 'www.malasngoding.com',
+             'nama' => 'Mylian',
+             'website' => 'polapola uas',
          ]);
     }
 }
