@@ -18,7 +18,7 @@ class SendEmailController extends Controller
      */
     public function index()
     {
-        $email = DB::table('users')->whereNotIn('email',['mozarone1@gmail.com'])->pluck('email');
+        $email['email'] = DB::table('users')->whereNotIn('email',['mozarone1@gmail.com'])->pluck('email');
         // dd($email);
         dispatch(new SendEmailJob($email));
         // Mail::to($email)->send(new SendEmail());
