@@ -12,6 +12,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/sendmail', 'SendEmailController@index')->name('mail.index');
+
+
 Route::group(['middleware' => ['auth','checkRole:admin,user']], function () {
     Route::get('/dashboard', 'DashboardController@index')->name('dashboard-index');
 
