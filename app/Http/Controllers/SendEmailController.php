@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\SendEmailJob;
 use App\Mail\SendEmail;
 use App\User;
 use Illuminate\Http\Request;
@@ -17,9 +18,10 @@ class SendEmailController extends Controller
      */
     public function index()
     {
-        $email = User::pluck('email');
+        $email = DB::table('users')->whereNotIn('email',['mozarone1@gmail.com'])->pluck('email');
         // dd($email);
-        Mail::to($email)->send(new SendEmail());
+        dispatch(new SendEmailJob($email));
+        // Mail::to($email)->send(new SendEmail());
         // foreach ($email as $m) {
         //     // $mailspec = $m->email;
         //     dd($m->email);
