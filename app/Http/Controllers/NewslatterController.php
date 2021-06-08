@@ -46,7 +46,7 @@ class NewslatterController extends Controller
         toast('Email berhasil dikirim', 'success')->autoClose(3000);
         return redirect()->back();
     }
-
+    
     /**
      * Show the form for creating a new resource.
      *
@@ -57,13 +57,17 @@ class NewslatterController extends Controller
         $subject = $request->subject;
         $isi = $request->deskripsi;
         $email = $request->email;
-
-        if($email == 0){
+        // dd($email);
+        
+        if($email == "null"){
+            toast('gagal', 'error')->autoClose(3000);
             return redirect()->back();
         }else{
             dispatch(new SendEmailJob($subject,$isi,$email));
-            return redirect()->back();
         }
+        
+        toast('berhasil', 'success')->autoClose(3000);
+        return redirect()->back();
     }
 
     /**

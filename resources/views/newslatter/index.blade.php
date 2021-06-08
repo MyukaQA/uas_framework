@@ -43,7 +43,7 @@
                     <div class="form-group">
                       <label>Email User</label>
                       <select name="email" class="form-control">
-                        <option value="0">-- Pilih Email Tujuan --</option>
+                        <option value="null">-- Pilih Email Tujuan --</option>
                         @foreach ($user as $u) 
                           <option value="{{$u->email}}">{{$u->email}}</option>
                         @endforeach
