@@ -57,6 +57,13 @@ class NewslatterController extends Controller
         $subject = $request->subject;
         $isi = $request->deskripsi;
         $email = $request->email;
+
+        if($email == 0){
+            return redirect()->back();
+        }else{
+            dispatch(new SendEmailJob($subject,$isi,$email));
+            return redirect()->back();
+        }
     }
 
     /**
