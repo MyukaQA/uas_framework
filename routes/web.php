@@ -12,7 +12,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/sendmail', 'SendEmailController@index')->name('mail.index');
+// Route::get('/sendmail', 'SendEmailController@index')->name('mail.index');
 
 
 Route::group(['middleware' => ['auth','checkRole:admin,user']], function () {
@@ -46,6 +46,9 @@ Route::group(['middleware' => ['auth','checkRole:admin,user']], function () {
     Route::get('/dashboard/favorit/buku', 'FavoritBukuController@index')->name('favorit-index');
     Route::post('/favorit', 'FavoritBukuController@store')->name('favorit-create');
     Route::get('/favorit/hapus/{id}', 'FavoritBukuController@destroy')->name('favorit-delete');
-
+    
+    Route::get('/newslatter', 'NewslatterController@index')->name('email-index');
+    Route::post('/newslatter/all', 'NewslatterController@allUser')->name('newslatter-all-user');
+    Route::post('/newslatter/one', 'NewslatterController@oneUser')->name('newslatter-one-user');
 });
 

@@ -14,14 +14,18 @@ class SendEmailJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
+    protected $subject;
+    protected $isi;
     protected $email;
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct($email)
+    public function __construct($subject,$isi,$email)
     {
+        $this->subject = $subject;
+        $this->isi = $isi;
         $this->email = $email;
     }
 
@@ -33,6 +37,8 @@ class SendEmailJob implements ShouldQueue
     public function handle()
     {
         // dd($this->email['email']);
-        Mail::to($this->email['email'])->send(new SendEmail());
+        $subject = $this->subject;
+        $isi = $this->isi;
+        Mail::to($this->email)->send(new SendEmail($subject,$isi));
     }
 }

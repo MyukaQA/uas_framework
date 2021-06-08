@@ -16,9 +16,11 @@ class SendEmail extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($subject,$isi)
     {
-        //
+        $this->subject = $subject;
+        $this->isi = $isi;
+        
     }
 
     /**
@@ -28,12 +30,11 @@ class SendEmail extends Mailable
      */
     public function build()
     {
-        return $this->from('myukaqa.official@gmail.com')
+        return $this->subject($this->subject)->from('myukaqa.official@gmail.com')
         ->view('email.email')
         ->with(
          [
-             'nama' => 'Mylian',
-             'website' => 'polapola uas',
+             'isi' => $this->isi,
          ]);
     }
 }
