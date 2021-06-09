@@ -68,7 +68,29 @@ class UsersTableSeeder extends Seeder
             'remember_token' => Str::random(60)
         ]);
 
+        \App\User::create([
+            'role' => 'user',
+            'name' => 'Linda',
+            'email' => 'blendermyl@gmail.com',
+            'password' => Hash::make('182410102040'),
+            'remember_token' => Str::random(60)
+        ]);
 
+        \App\User::create([
+            'role' => 'user',
+            'name' => 'Linda',
+            'email' => 'myukayn@gmail.com',
+            'password' => Hash::make('182410102040'),
+            'remember_token' => Str::random(60)
+        ]);
+
+        \App\User::create([
+            'role' => 'user',
+            'name' => 'Linda',
+            'email' => 'mihoyogamex1@gmail.com',
+            'password' => Hash::make('182410102040'),
+            'remember_token' => Str::random(60)
+        ]);
 
         
 
