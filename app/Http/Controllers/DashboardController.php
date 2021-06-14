@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Buku;
+use App\Helpers\DataHelpers;
 use App\Kategori;
 use App\RakBuku;
 use Illuminate\Http\Request;
@@ -16,14 +17,17 @@ class DashboardController extends Controller
      */
     public function index(Request $request)
     {
+        $helper = DataHelpers::getInstance();
+
         if ($request->has('cari')){
             $bukus = Buku::where('judul', 'LIKE', '%'.$request->cari.'%')->orderBy('id', 'DESC')->paginate(10);
-            $kategoris = Kategori::all();
-            $rakBukus = RakBuku::all();            
+            $kategoris = $helper->kategoriObject();
+            $rakBukus = $helper->rakBukuObject();            
         }else{
             $bukus = Buku::orderBy('id', 'DESC')->paginate(10);
-            $kategoris = Kategori::all();
-            $rakBukus = RakBuku::all();
+            $kategoris = $helper->kategoriObject();
+            $rakBukus = $helper->rakBukuObject();            
+            
         }
         return view('dashboard.index', compact('bukus', 'kategoris', 'rakBukus'));
     }

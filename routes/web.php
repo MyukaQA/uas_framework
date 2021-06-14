@@ -47,6 +47,9 @@ Route::group(['middleware' => ['auth','checkRole:admin,user']], function () {
     Route::post('/favorit', 'FavoritBukuController@store')->name('favorit-create');
     Route::get('/favorit/hapus/{id}', 'FavoritBukuController@destroy')->name('favorit-delete');
     
+});
+
+Route::group(['middleware' => ['auth','checkRole:admin']], function () {
     Route::get('/newslatter', 'NewslatterController@index')->name('email-index');
     Route::post('/newslatter/all', 'NewslatterController@allUser')->name('newslatter-all-user');
     Route::post('/newslatter/one', 'NewslatterController@oneUser')->name('newslatter-one-user');

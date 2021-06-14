@@ -58,7 +58,9 @@
 
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                       <a href="{{route('dashboard-index')}}" class="dropdown-item">dashboard</a>
+                      @if (auth()->user()->role == 'admin')
                       <a href="{{route('email-index')}}" class="dropdown-item">newslatter</a>
+                      @endif
                       <a class="dropdown-item" href="{{ route('logout') }}"
                           onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">
