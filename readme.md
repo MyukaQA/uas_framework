@@ -13,10 +13,16 @@ sebelum run project silahkan konfigurasi env nya dan generate Keynya , habis itu
 ```shell
 # create copy of .env
 $ cp .env.example .env
+
+# Bikin database kosong dan sesuai nama databasenya di .env
+
 # create laravel key
 $ php artisan key:generate
 # laravel migrate
 $ php artisan migrate
+# Jalankan project
+$ php artisan serve
+
 ```
 
 ## About Laravel
