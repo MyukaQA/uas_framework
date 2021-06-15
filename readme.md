@@ -14,7 +14,7 @@ sebelum run project silahkan konfigurasi env nya dan generate Keynya , habis itu
 # create copy of .env
 $ cp .env.example .env
 
-# Bikin database kosong dan sesuai nama databasenya di .env
+# Bikin database kosong di localhost dan sesuaikan nama databasenya di .env, jangan lupa DB_USERNAME dan DB_PASSWORD localhost di sesuaikan masing-masing
 
 # create laravel key
 $ php artisan key:generate
