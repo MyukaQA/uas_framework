@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Buku;
 use App\FavoritBuku;
+use App\Helpers\DataHelpers;
 use App\Ulasan;
 use Illuminate\Http\Request;
 use File;
@@ -78,8 +79,9 @@ class BukuController extends Controller
      */
     public function show($id)
     {
+        $helper = DataHelpers::getInstance();
         $buku = Buku::find($id);
-        $ulasan = Ulasan::all();
+        $ulasan = $helper->ulasanObject();
         $favorit = FavoritBuku::where([
             ['user_id',Auth::user()->id],
             ['buku_id',$buku->id]

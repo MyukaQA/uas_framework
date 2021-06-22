@@ -20,17 +20,10 @@ class DashboardController extends Controller
     {
         $helper = DataHelpers::getInstance();
 
-        $kategoris = $helper->kategoriObject();
-        $kategoris1 = $helper->kategoriObject();
-
-        if($kategoris === $kategoris1){
-            dd('true');
-        }else{
-            dd('false');
-        }
         if ($request->has('cari')){
             $bukus = Buku::where('judul', 'LIKE', '%'.$request->cari.'%')->orderBy('id', 'DESC')->paginate(10);
             $rakBukus = $helper->rakBukuObject();            
+            $kategoris = $helper->kategoriObject();
         }else{
             $bukus = Buku::orderBy('id', 'DESC')->paginate(10);
             $kategoris = $helper->kategoriObject();

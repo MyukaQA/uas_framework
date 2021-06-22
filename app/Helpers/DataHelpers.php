@@ -4,6 +4,7 @@ namespace App\Helpers;
 
 use App\Kategori;
 use App\RakBuku;
+use App\Ulasan;
 
 class DataHelpers{
     // Bikin wadah untuk menampung objek.
@@ -29,5 +30,9 @@ class DataHelpers{
 
     public function rakBukuObject(){
       return RakBuku::all();
+    }
+
+    public function ulasanObject(){
+      return Ulasan::all();
     }
 }
