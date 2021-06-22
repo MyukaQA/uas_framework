@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
+    // public static $helper = DataHelpers::getInstance();    
     /**
      * Display a listing of the resource.
      *
@@ -19,9 +20,16 @@ class DashboardController extends Controller
     {
         $helper = DataHelpers::getInstance();
 
+        $kategoris = $helper->kategoriObject();
+        $kategoris1 = $helper->kategoriObject();
+
+        if($kategoris === $kategoris1){
+            dd('true');
+        }else{
+            dd('false');
+        }
         if ($request->has('cari')){
             $bukus = Buku::where('judul', 'LIKE', '%'.$request->cari.'%')->orderBy('id', 'DESC')->paginate(10);
-            $kategoris = $helper->kategoriObject();
             $rakBukus = $helper->rakBukuObject();            
         }else{
             $bukus = Buku::orderBy('id', 'DESC')->paginate(10);
@@ -39,7 +47,6 @@ class DashboardController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
